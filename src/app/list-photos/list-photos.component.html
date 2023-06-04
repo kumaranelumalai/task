@@ -1,0 +1,16 @@
+<!-- <div class="row" >
+<div class="col-xs-3" *ngFor="let photo of listPhotos">
+  <img [src]="photo" />
+</div>
+</div> -->
+
+  <div fxLayout="row wrap" fxLayoutAlign="space-evenly center">
+    <div   fxFlex="0 1 calc(25% - 0.5%)"
+    fxFlex.lt-sm="0 1 calc(50% - 0.5%)"
+    class="main"  *ngFor="let photo of listPhotos | slice:0:6;let i=index" >
+      <span class="close" (click)="deleteImage('0ms', '0ms',i)">x</span>
+      <img  [src]="photo" />
+      </div>
+    </div>
+
+
